@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Lista de Usuarios</title>
+    <h:outputStylesheet>
+        html, body {
+            height: 100%;
+        }
+
+        .content {
+            min-height: calc(80% - 45px); /* Ajusta la altura según el contenido de tu página */
+        }
+
+        .custom-input {
+            max-width: 450px;
+        }
+
+        .logo {
+            font-size: 2.1em;
+            color: #fff;
+            user-select: none;
+        }
+
+        .navegation-a {
+            position: relative;
+            font-size: 1em;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+        }
+
+        .navegation-a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            border-radius: 5px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .5s;
+        }
+
+        .navegation-a:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+    </h:outputStylesheet>
+</h:head>
+
+<h:body>
+
+    <ui:insert name="content" />
+
+</h:body>
+</html>

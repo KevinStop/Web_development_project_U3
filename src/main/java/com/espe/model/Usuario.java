@@ -1,14 +1,27 @@
 package com.espe.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Usuarios")
 public class Usuario {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer id_usu;
+    @Column
     private String nombre;
+    @Column
     private String apellido;
+    @Column
     private String password_usu;
+    @Column
     private String correo;
+    @Column
     private String telefono;
+    @Column
     private String direccion;
+    @Column
     private Integer id_rol;
 
     public Integer getId_usu() {
