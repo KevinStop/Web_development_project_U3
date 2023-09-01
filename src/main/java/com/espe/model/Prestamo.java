@@ -1,12 +1,22 @@
 package com.espe.model;
 
+import jakarta.persistence.*;
+
 import java.sql.Date;
 
+@Entity
+@Table(name = "Prestamos")
 public class Prestamo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column
     private int usuarioId;
+    @Column
     private int libroId;
+    @Column
     private Date fechaPrestamo;
+    @Column
     private Date fechaDevolucion;
 
     public int getId() {

@@ -6,6 +6,31 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Hello, world"/>
+    <h2>
+        <h:outputLabel value="Actualizar Prestamos"/>
+    </h2>
+    <h:form>
+        <h:panelGrid columns="2" cellspacing="20" border="1">
+            <f:facet name="header">
+                <h:outputText value="Actualizar Prestamos"></h:outputText>
+            </f:facet>
+
+            <h:outputText value="Id de Usuario"></h:outputText>
+            <h:inputText value="#{Prestamos.usuarioId}"></h:inputText>
+
+            <h:outputText value="Id de libro"></h:outputText>
+            <h:inputText value="#{Prestamos.libroId}"></h:inputText>
+
+            <h:outputText value="Fecha de prestamo"></h:outputText>
+            <h:inputText value="#{Prestamos.fechaPrestamo}"></h:inputText>
+
+            <h:outputText value="Fecha de devolucion"></h:outputText>
+            <h:inputText value="#{Prestamos.fechaDevolucion}"></h:inputText>
+
+            <f:facet name="footer">
+                <h:commandButton value="Actualizar" action="#{prestamoBean.editarPrestamos(Prestamos)}"></h:commandButton>
+            </f:facet>
+        </h:panelGrid>
+    </h:form>
 </f:view>
 </html>

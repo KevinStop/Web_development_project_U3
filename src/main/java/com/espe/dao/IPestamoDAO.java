@@ -5,13 +5,9 @@ import com.espe.model.Prestamo;
 import java.util.List;
 
 public interface IPestamoDAO {
-    List<Prestamo> getAllPrestamos();
+    List<Prestamo> obtenerPrestamos();
 
-    Prestamo getPrestamoById(int id);
+    Prestamo buscarPrestamos(int id);
 
-    void addPrestamo(Prestamo prestamo);
-
-    void updatePrestamo(Prestamo prestamo);
-
-    void deletePrestamo(int id);
+    void editarPrestamos(Prestamo prestamo);
 }
