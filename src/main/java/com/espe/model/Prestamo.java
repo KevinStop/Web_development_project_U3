@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.sql.Date;
 
+
 @Entity
 @Table(name = "Prestamos")
 public class Prestamo {
@@ -11,13 +12,13 @@ public class Prestamo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
-    private int usuarioId;
+    private int usuario_id;
     @Column
-    private int libroId;
+    private int libro_id;
     @Column
-    private Date fechaPrestamo;
+    private Date fecha_prestamo;
     @Column
-    private Date fechaDevolucion;
+    private Date fecha_devolucion;
 
     public int getId() {
         return id;
@@ -27,46 +28,46 @@ public class Prestamo {
         this.id = id;
     }
 
-    public int getUsuarioId() {
-        return usuarioId;
+    public int getUsuario_id() {
+        return usuario_id;
     }
 
-    public void setUsuarioId(int usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario_id(int usuario_id) {
+        this.usuario_id = usuario_id;
     }
 
-    public int getLibroId() {
-        return libroId;
+    public int getLibro_id() {
+        return libro_id;
     }
 
-    public void setLibroId(int libroId) {
-        this.libroId = libroId;
+    public void setLibro_id(int libro_id) {
+        this.libro_id = libro_id;
     }
 
-    public Date getFechaPrestamo() {
-        return fechaPrestamo;
+    public Date getFecha_prestamo() {
+        return fecha_prestamo;
     }
 
-    public void setFechaPrestamo(Date fechaPrestamo) {
-        this.fechaPrestamo = fechaPrestamo;
+    public void setFecha_prestamo(Date fecha_prestamo) {
+        this.fecha_prestamo = fecha_prestamo;
     }
 
-    public Date getFechaDevolucion() {
-        return fechaDevolucion;
+    public Date getFecha_devolucion() {
+        return fecha_devolucion;
     }
 
-    public void setFechaDevolucion(Date fechaDevolucion) {
-        this.fechaDevolucion = fechaDevolucion;
+    public void setFecha_devolucion(Date fecha_devolucion) {
+        this.fecha_devolucion = fecha_devolucion;
     }
 
     @Override
     public String toString() {
         return "Prestamo{" +
                 "id=" + id +
-                ", usuarioId=" + usuarioId +
-                ", libroId=" + libroId +
-                ", fechaPrestamo=" + fechaPrestamo +
-                ", fechaDevolucion=" + fechaDevolucion +
+                ", usuario_id=" + usuario_id +
+                ", libro_id=" + libro_id +
+                ", fecha_prestamo=" + fecha_prestamo +
+                ", fecha_devolucion=" + fecha_devolucion +
                 '}';
     }
 }
