@@ -5,6 +5,7 @@ import com.espe.model.JPAUtil;
 import com.espe.model.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
@@ -52,4 +53,5 @@ public class UsuarioDAOImpl implements IUsuarioDAO {
         entityManager.remove(oUsuario);
         entityManager.getTransaction().commit();
     }
+
 }

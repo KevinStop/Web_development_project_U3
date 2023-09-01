@@ -43,4 +43,8 @@ public class PrestamoBean {
         System.out.println(oPrestamo);
         return "/Prestamo/Editar.xhtml";
     }
+
+    public String prestamo(){
+        return  "/Prestamo/Prestamo.xhtml";
+    }
 }

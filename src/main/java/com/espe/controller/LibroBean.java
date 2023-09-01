@@ -7,7 +7,6 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -58,6 +57,10 @@ public class LibroBean {
     public String guardar(Libro libro) {
         libroDAO.guardar(libro);
         return "/Libro/Admin.xhtml";
+    }
+
+    public String libro(){
+        return  "/Libro/Admin.xhtml";
     }
 }
 

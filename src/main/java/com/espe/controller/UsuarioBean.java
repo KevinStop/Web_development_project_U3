@@ -3,7 +3,7 @@ package com.espe.controller;
 import com.espe.dao.IUsuarioDAO;
 import com.espe.idao.UsuarioDAOImpl;
 import com.espe.model.Usuario;
-import jakarta.faces.bean.RequestScoped;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 
@@ -13,14 +13,6 @@ import java.util.Map;
 @RequestScoped
 @Named
 public class UsuarioBean {
-
-    public String index() {
-        return "/index.xhtml";
-    }
-
-    public String contact() {
-        return "/Contact.xhtml";
-    }
 
     IUsuarioDAO usuarioDAO = new UsuarioDAOImpl();
     //Prueba para pasar datos quemados a la vista
@@ -37,17 +29,17 @@ public class UsuarioBean {
         //pasar el objeto por medio del SessionMap hacia la vista
         sessionMap.put("usuario", oUsuario);
         System.out.println(oUsuario);
-        return "/editar.xhtml";
+        return "/Usuario/Editar.xhtml";
     }
 
     public String actualizar(Usuario usuario){
         usuarioDAO.editar(usuario);
-        return "/index.xhtml";
+        return "/Usuario/Usuario.xhtml";
     }
 
     public String eliminar(int id){
         usuarioDAO.eliminar(id);
-        return "/index.xhtml";
+        return "/Usuario/Usuario.xhtml";
     }
 
     public String nuevo(){
@@ -57,11 +49,23 @@ public class UsuarioBean {
         //pasar el objeto por medio del SessionMap hacia la vista
         sessionMap.put("usuario", oUsuario);
         System.out.println(oUsuario);
-        return "/nuevo.xhtml";
+        return "/Usuario/Nuevo.xhtml";
     }
 
     public String guardar(Usuario usuario){
         usuarioDAO.guardar(usuario);
-        return "index.xhtml";
+        return "/Usuario/Usuario.xhtml";
+    }
+
+    public String usuario(){
+        return  "/Usuario/Usuario.xhtml";
+    }
+
+    public String index(){
+        return  "/index.xhtml";
+    }
+
+    public String contact(){
+        return  "/Contact.xhtml";
     }
 }

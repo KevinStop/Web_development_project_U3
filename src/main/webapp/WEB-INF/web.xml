@@ -8,13 +8,11 @@
         <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
-
     <welcome-file-list>
-        <welcome-file>Prestamo/Prestamo.xhtml</welcome-file>
+        <welcome-file>Usuario/Usuario.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>
