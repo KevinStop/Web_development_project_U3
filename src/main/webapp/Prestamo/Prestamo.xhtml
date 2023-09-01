@@ -8,36 +8,40 @@
       xmlns:p="http://primefaces.org/ui">
 <ui:composition template="/Layout.xhtml">
     <ui:define name="content">
-        <h2>Lista de Prestamos</h2>
+        <h2>Lista de Préstamos</h2>
         <div class="row my-3">
             <div class="col-md-12">
                 <h:form>
+                    <p:commandButton value="Nuevo Préstamo" action="#{prestamoBean.nuevo()}" styleClass="ui-button ui-button-success" />
 
                     <p:dataTable id="dataTable" value="#{prestamoBean.obtenerPrestamo()}" var="prestamo" styleClass="ui-datatable">
                         <p:column headerText="Id">
                             <h:outputText value="#{prestamo.id}" />
                         </p:column>
 
-                        <p:column headerText="Id de usuario ">
+                        <p:column headerText="Usuario ID">
                             <h:outputText value="#{prestamo.usuario_id}" />
                         </p:column>
 
-                        <p:column headerText="Id de libro">
+                        <p:column headerText="Libro ID">
                             <h:outputText value="#{prestamo.libro_id}" />
                         </p:column>
 
-                        <p:column headerText="Fecha de prestamo">
+                        <p:column headerText="Fecha de Préstamo">
                             <h:outputText value="#{prestamo.fecha_prestamo}" />
                         </p:column>
 
-                        <p:column headerText="Fecha de devolucion">
+                        <p:column headerText="Fecha de Devolución">
                             <h:outputText value="#{prestamo.fecha_devolucion}" />
                         </p:column>
 
                         <p:column headerText="Editar">
-                            <p:commandButton action="#{prestamoBean.editarPrestamo(prestamo.id)}" value="Editar" styleClass="ui-button ui-button-success" />
+                            <p:commandButton action="#{prestamoBean.editar(prestamo.id)}" value="Editar" styleClass="ui-button ui-button-success" />
                         </p:column>
 
+                        <p:column headerText="Eliminar">
+                            <p:commandButton action="#{prestamoBean.eliminar(prestamo.id)}" value="Eliminar" update="dataTable" styleClass="ui-button ui-button-danger" />
+                        </p:column>
                     </p:dataTable>
                 </h:form>
             </div>

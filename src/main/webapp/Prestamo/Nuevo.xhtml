@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/Layout.xhtml">
+    <ui:define name="content">
+        <h:form styleClass="form-container">
+            <p:panelGrid columns="1" styleClass="ui-panel">
+                <f:facet name="header">
+                    <h:outputText value="Registrar Préstamo" styleClass="title-style"></h:outputText>
+                </f:facet>
+
+                <p:row>
+                    <p:column>
+                        <h:outputText value="Usuario ID" styleClass="ui-label"></h:outputText>
+                        <p:inputText value="#{prestamo.usuario_id}" styleClass="ui-input"></p:inputText>
+                    </p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column>
+                        <h:outputText value="Libro ID" styleClass="ui-label"></h:outputText>
+                        <p:inputText value="#{prestamo.libro_id}" styleClass="ui-input"></p:inputText>
+                    </p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column>
+                        <h:outputText value="Fecha de Préstamo" styleClass="ui-label"></h:outputText>
+                        <p:inputText value="#{prestamo.fecha_prestamo}" styleClass="ui-input"></p:inputText>
+                    </p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column>
+                        <h:outputText value="Fecha de Devolución" styleClass="ui-label"></h:outputText>
+                        <p:inputText value="#{prestamo.fecha_devolucion}" styleClass="ui-input"></p:inputText>
+                    </p:column>
+                </p:row>
+
+                <p:row>
+                    <p:column>
+                        <p:commandButton value="Guardar" action="#{prestamoBean.guardar(prestamo)}" styleClass="ui-button ui-button-success"/>
+                        <p:commandButton value="Regresar" action="#{prestamoBean.prestamo()}" styleClass="ui-button ui-button-danger"/>
+                    </p:column>
+                </p:row>
+            </p:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

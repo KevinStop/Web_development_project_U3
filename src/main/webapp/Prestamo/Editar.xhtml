@@ -15,36 +15,36 @@
                         <p:panelGrid>
                             <p:row>
                                 <p:column>
-                                    <h:outputLabel for="idusuario" value="Id de usuario" styleClass="form-label" />
-                                    <p:inputText id="idusuario" value="#{prestamo.usuario_id}" styleClass="form-control" />
+                                    <h:outputLabel for="usuario_id" value="Usuario ID" styleClass="form-label" />
+                                    <p:inputText id="usuario_id" value="#{prestamo.usuario_id}" styleClass="form-control" />
                                 </p:column>
                             </p:row>
 
                             <p:row>
                                 <p:column>
-                                    <h:outputLabel for="idlibro" value="Id de libro" styleClass="form-label" />
-                                    <p:inputText id="idlibro" value="#{prestamo.libro_id}" styleClass="form-control" />
+                                    <h:outputLabel for="libro_id" value="Libro ID" styleClass="form-label" />
+                                    <p:inputText id="libro_id" value="#{prestamo.libro_id}" styleClass="form-control" />
                                 </p:column>
                             </p:row>
 
                             <p:row>
                                 <p:column>
-                                    <h:outputLabel for="fechaprestamo" value="Fecha de prestamo" styleClass="form-label" />
-                                    <p:inputText id="fechaprestamo" value="#{prestamo.fecha_prestamo}" styleClass="form-control" />
+                                    <h:outputLabel for="fecha_prestamo" value="Fecha de Préstamo" styleClass="form-label" />
+                                    <p:inputText id="fecha_prestamo" value="#{prestamo.fecha_prestamo}" styleClass="form-control" />
                                 </p:column>
                             </p:row>
 
                             <p:row>
                                 <p:column>
-                                    <h:outputLabel for="fechadevolucion" value="Fecha de devolucion" styleClass="form-label" />
-                                    <p:inputText id="fechadevolucion" value="#{prestamo.fecha_devolucion}" styleClass="form-control" />
+                                    <h:outputLabel for="fecha_devolucion" value="Fecha de Devolución" styleClass="form-label" />
+                                    <p:inputText id="fecha_devolucion" value="#{prestamo.fecha_devolucion}" styleClass="form-control" />
                                 </p:column>
                             </p:row>
 
                             <p:row>
                                 <p:column>
                                     <p:commandButton value="Actualizar" action="#{prestamoBean.actualizar(prestamo)}" styleClass="btn btn-success" />
-                                    <p:commandButton value="Regresar" action="/Prestamo/Prestamo.xhtml" styleClass="btn btn-danger"/>
+                                    <p:commandButton value="Regresar" action="#{prestamoBean.prestamo()}" styleClass="btn btn-danger"/>
                                 </p:column>
                             </p:row>
                         </p:panelGrid>
