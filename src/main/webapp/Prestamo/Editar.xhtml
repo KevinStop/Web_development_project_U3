@@ -4,33 +4,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h2>
-        <h:outputLabel value="Actualizar Prestamos"/>
-    </h2>
-    <h:form>
-        <h:panelGrid columns="2" cellspacing="20" border="1">
-            <f:facet name="header">
-                <h:outputText value="Actualizar Prestamos"></h:outputText>
-            </f:facet>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/Layout.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <div class="container p-4">
+                <div class="row justify-content-center">
+                    <div class="col col-md-8 ">
+                        <p:panelGrid>
+                            <p:row>
+                                <p:column>
+                                    <h:outputLabel for="idusuario" value="Id de usuario" styleClass="form-label" />
+                                    <p:inputText id="idusuario" value="#{prestamo.usuario_id}" styleClass="form-control" />
+                                </p:column>
+                            </p:row>
 
-            <h:outputText value="Id de Usuario"></h:outputText>
-            <h:inputText value="#{Prestamos.usuarioId}"></h:inputText>
+                            <p:row>
+                                <p:column>
+                                    <h:outputLabel for="idlibro" value="Id de libro" styleClass="form-label" />
+                                    <p:inputText id="idlibro" value="#{prestamo.libro_id}" styleClass="form-control" />
+                                </p:column>
+                            </p:row>
 
-            <h:outputText value="Id de libro"></h:outputText>
-            <h:inputText value="#{Prestamos.libroId}"></h:inputText>
+                            <p:row>
+                                <p:column>
+                                    <h:outputLabel for="fechaprestamo" value="Fecha de prestamo" styleClass="form-label" />
+                                    <p:inputText id="fechaprestamo" value="#{prestamo.fecha_prestamo}" styleClass="form-control" />
+                                </p:column>
+                            </p:row>
 
-            <h:outputText value="Fecha de prestamo"></h:outputText>
-            <h:inputText value="#{Prestamos.fechaPrestamo}"></h:inputText>
+                            <p:row>
+                                <p:column>
+                                    <h:outputLabel for="fechadevolucion" value="Fecha de devolucion" styleClass="form-label" />
+                                    <p:inputText id="fechadevolucion" value="#{prestamo.fecha_devolucion}" styleClass="form-control" />
+                                </p:column>
+                            </p:row>
 
-            <h:outputText value="Fecha de devolucion"></h:outputText>
-            <h:inputText value="#{Prestamos.fechaDevolucion}"></h:inputText>
-
-            <f:facet name="footer">
-                <h:commandButton value="Actualizar" action="#{prestamoBean.editarPrestamos(Prestamos)}"></h:commandButton>
-            </f:facet>
-        </h:panelGrid>
-    </h:form>
-</f:view>
+                            <p:row>
+                                <p:column>
+                                    <p:commandButton value="Actualizar" action="#{prestamoBean.actualizar(prestamo)}" styleClass="btn btn-success" />
+                                    <p:commandButton value="Regresar" action="/Prestamo/Prestamo.xhtml" styleClass="btn btn-danger"/>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
 </html>
