@@ -69,7 +69,7 @@
     <h:form>
         <div class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <h:commandLink action="#{NavbarController.index()}" styleClass="navbar-brand logo">
+                <h:commandLink action="#{usuarioBean.index}" styleClass="navbar-brand logo">
                     Biblioteca
                 </h:commandLink>
                 <button class="navbar-toggler" type="button" data-toggle="dropdown" data-target="#navbarNav"
@@ -89,7 +89,7 @@
                             </h:commandLink>
                         </li>
                         <li class="nav-item">
-                            <h:commandLink action="#{navbarController.contact()}" styleClass="nav-link navegation-a">
+                            <h:commandLink action="#{usuarioBean.contact}" styleClass="nav-link navegation-a">
                                 Contactos
                             </h:commandLink>
                         </li>
@@ -116,7 +116,9 @@
             </div>
         </div>
     </h:form>
-    <ui:insert name="content" />
+    <div class="container content">
+        <ui:insert name="content" />
+    </div>
     <h:panelGroup layout="block" styleClass="bg-dark text-center text-white">
         <!-- Grid container -->
         <div class="container p-4 pb-0">

@@ -4,8 +4,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/Layout.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <div class="container p-4">
+                <div class="row justify-content-center">
+                    <div class="col col-md-8 ">
+                        <p:panelGrid>
+                            <p:row>
+                                <p:column>
+                                    <h:outputLabel for="titulo" value="Titulo" styleClass="form-label" />
+                                    <p:inputText id="titulo" value="#{libro.titulo}" styleClass="form-control" />
+                                </p:column>
+                            </p:row>
+
+                            <p:row>
+                                <p:column>
+                                    <h:outputLabel for="autor" value="Autor" styleClass="form-label" />
+                                    <p:inputText id="autor" value="#{libro.autor}" styleClass="form-control" />
+                                </p:column>
+                            </p:row>
+
+                            <p:row>
+                                <p:column>
+                                    <h:outputLabel for="anioPublicacion" value="Año de Publicacion" styleClass="form-label" />
+                                    <p:inputText id="anioPublicacion" value="#{libro.anioPublicacion}" styleClass="form-control" />
+                                </p:column>
+                            </p:row>
+
+                            <p:row>
+                                <p:column>
+                                    <h:outputLabel for="categoria" value="Categoria" styleClass="form-label" />
+                                    <p:inputText id="categoria" value="#{libro.categoria}" styleClass="form-control" />
+                                </p:column>
+                            </p:row>
+
+                            <p:row>
+                                <p:column>
+                                    <p:commandButton value="Actualizar" action="#{libroBean.actualizar(libro)}" styleClass="btn btn-success" />
+                                    <p:commandButton value="Regresar" action="/Libro/Admin.xhtml" styleClass="btn btn-danger"/>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
 </html>

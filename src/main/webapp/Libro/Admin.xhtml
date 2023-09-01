@@ -4,8 +4,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/Layout.xhtml">
+    <ui:define name="content">
+        <h2>Lista de Libros</h2>
+        <div class="row my-3">
+            <div class="col-md-12">
+                <h:form>
+                    <p:commandButton value="Nuevo Libro" action="#{libroBean.nuevo()}" styleClass="ui-button ui-button-success" />
+
+                    <p:dataTable id="dataTable" value="#{libroBean.obtenerLibros()}" var="libro" styleClass="ui-datatable">
+                        <p:column headerText="Id">
+                            <h:outputText value="#{libro.id}" />
+                        </p:column>
+
+                        <p:column headerText="Titulo">
+                            <h:outputText value="#{libro.titulo}" />
+                        </p:column>
+
+                        <p:column headerText="Autor">
+                            <h:outputText value="#{libro.autor}" />
+                        </p:column>
+
+                        <p:column headerText="Año de Publicacion">
+                            <h:outputText value="#{libro.anioPublicacion}" />
+                        </p:column>
+
+                        <p:column headerText="Categoria">
+                            <h:outputText value="#{libro.categoria}" />
+                        </p:column>
+
+                        <p:column headerText="Editar">
+                            <p:commandButton action="#{libroBean.editar(libro.id)}" value="Editar" styleClass="ui-button ui-button-success" />
+                        </p:column>
+
+                        <p:column headerText="Eliminar">
+                            <p:commandButton action="#{libroBean.eliminar(libro.id)}" value="Eliminar" update="dataTable" styleClass="ui-button ui-button-danger" />
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>
 </html>
